@@ -14,10 +14,10 @@
 # Copyright: Red Hat Inc. 2013-2014
 # Author: Lucas Meneghel Rodrigues <lmr@redhat.com>
 
-from avocado_virt import test
+from avocado import Test
 
 
-class BootTest(test.VirtTest):
+class BootTest(Test):
 
     """
     Simple test which boots VM, logins and powers it off.
@@ -26,9 +26,6 @@ class BootTest(test.VirtTest):
     """
 
     def test_boot(self):
-        self.vm.power_on()
-        self.vm.login_remote()
+        self.log.info("hloo")
 
-    def tearDown(self):
-        if self.vm:
-            self.vm.power_off()
+   
